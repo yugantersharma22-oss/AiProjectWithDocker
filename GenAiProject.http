@@ -1,0 +1,6 @@
+@GenAiProject_HostAddress = http://localhost:5038
+
+GET {{GenAiProject_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

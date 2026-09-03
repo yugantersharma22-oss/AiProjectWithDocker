@@ -1,0 +1,135 @@
+[
+  {
+    "ContainingType": "GenAiProject.Controllers.GeminiSqlQueryReturnController",
+    "Method": "GenerateSql",
+    "RelativePath": "api/GeminiSqlQueryReturn/generate-sql",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requirement",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GenAiProject.Controllers.GeminiStaticPromptController",
+    "Method": "ExecutePrompt",
+    "RelativePath": "api/GeminiStaticPrompt/execute-prompt",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userPrompt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GenAiProject.Controllers.MemoryCachedController",
+    "Method": "ClearHistory",
+    "RelativePath": "api/MemoryCached/clear-history/{sessionId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sessionId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GenAiProject.Controllers.MemoryCachedController",
+    "Method": "ExecuteChatPrompt",
+    "RelativePath": "api/MemoryCached/execute-chat-prompt",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GenAiProject.DTOs.ChatRequestCachedDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GenAiProject.Controllers.MultiChatDynamicController",
+    "Method": "ExecuteChatPrompt",
+    "RelativePath": "api/MultiChatDynamic/execute-chat-prompt",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GenAiProject.DTOs.ChatRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GenAiProject.Controllers.MultiHumanChatController",
+    "Method": "ExecuteChatPrompt",
+    "RelativePath": "api/MultiHumanChat/execute-chat-prompt",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GenAiProject.DTOs.ChatRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GenAiProject.Controllers.SingleChatDynamicPromptController",
+    "Method": "ExecutePromptDynamic",
+    "RelativePath": "api/SingleChatDynamicPrompt/execute-prompt-dynamic",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userPrompt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GenAiProject.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[GenAiProject.WeatherForecast, GenAiProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

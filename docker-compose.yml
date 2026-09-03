@@ -1,0 +1,35 @@
+services:
+  api:
+    build: .
+    container_name: genai_api_container
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=${DB_CONNECTION_STRING}
+      - GeminiSettings__ApiKey=${GEMINI_API_KEY}
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - ai-network
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sql_server_container
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=${SA_PASSWORD}
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+    networks:
+      - ai-network
+
+volumes:
+  sql_data:
+
+networks:
+  ai-network:
+    driver: bridge
