@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GenAiProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a78b381e57f8e7f1ddd9f05b14d3f2f208f41b7d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f51964aa201b65ef4ffda4ac8190224772616aef")]
 [assembly: System.Reflection.AssemblyProductAttribute("GenAiProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GenAiProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

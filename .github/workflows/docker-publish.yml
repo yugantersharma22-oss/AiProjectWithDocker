@@ -1,11 +1,11 @@
-name: CI Pipeline to Docker Hub
+name: CI/CD Pipeline to Docker Hub and EC2
 
 on:
   push:
     branches: [ "main", "master" ]
 
 jobs:
-  build-and-push:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -24,3 +24,15 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/genai-project:latest
+
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.AWS_HOST }}
+          username: ${{ secrets.AWS_USERNAME }}
+          key: ${{ secrets.AWS_SSH_KEY }}
+          script: |
+            sudo docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/genai-project:latest
+            sudo docker stop my-app || true
+            sudo docker rm my-app || true
+            sudo docker run -d --name my-app -p 80:80 ${{ secrets.DOCKER_HUB_USERNAME }}/genai-project:latest
